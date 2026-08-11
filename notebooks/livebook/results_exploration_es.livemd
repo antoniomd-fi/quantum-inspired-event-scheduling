@@ -30,13 +30,6 @@ defmodule ResultsTable do
     |> List.first()
   end
 
-  def svg(relative_path) do
-    @repo_root
-    |> Path.join(relative_path)
-    |> File.read!()
-    |> Kino.HTML.new()
-  end
-
   def table(rows, columns) do
     header = columns |> Enum.map(fn {_key, label} -> label end) |> Enum.join(" | ")
     separator = columns |> Enum.map(fn _ -> "---" end) |> Enum.join(" | ")
@@ -44,13 +37,22 @@ defmodule ResultsTable do
     body =
       rows
       |> Enum.map(fn row ->
-        columns
-        |> Enum.map(fn {key, _label} -> row |> Map.fetch!(key) |> format() end)
-        |> Enum.join(" | ")
+        values =
+          columns
+          |> Enum.map(fn {key, _label} -> row |> Map.fetch!(key) |> format() end)
+          |> Enum.join(" | ")
+
+        "| #{values} |"
       end)
       |> Enum.join("\n")
 
     "| #{header} |\n| #{separator} |\n#{body}"
+  end
+
+  def print_table(rows, columns) do
+    rows
+    |> table(columns)
+    |> IO.puts()
   end
 
   def percent(value), do: "#{Float.round(value * 100, 2)}%"
@@ -58,6 +60,9 @@ defmodule ResultsTable do
   def signed_percent(value), do: "#{Float.round(value, 2)}%"
   def signed_float(value) when value > 0, do: "+#{Float.round(value, 4)}"
   def signed_float(value), do: "#{Float.round(value, 4)}"
+  def seconds(value), do: "#{Float.round(value, 2)} s"
+  def p_value(value) when value == 0.0, do: "0.000000"
+  def p_value(value), do: :erlang.float_to_binary(value, decimals: 6)
 
   defp parse_csv([header_line | rows]) do
     headers = String.split(header_line, ",")
@@ -139,7 +144,7 @@ v3_rows =
     }
   end)
 
-ResultsTable.table(v3_rows, [
+ResultsTable.print_table(v3_rows, [
   {"profile", "Perfil"},
   {"load_level", "Carga"},
   {"objective_win_rate", "Victorias"},
@@ -151,35 +156,131 @@ ResultsTable.table(v3_rows, [
 ])
 ```
 
-## Visualización: Señal Híbrida
+## Brecha Objetivo E Intervalos De Confianza
 
-La señal híbrida se activa cuando QUBO v1 gana por objetivo o queda dentro del
-5% del mejor clásico mientras mejora alguna métrica operacional relevante. En
-la práctica, esta gráfica ayuda a responder: ¿cuándo tendría sentido activar un
-optimizador QUBO especializado en vez de usar solo una heurística clásica?
+Las brechas negativas indican que QUBO v1 superó a la mejor heurística clásica
+según el coste objetivo. Esta tabla es el punto principal para decidir dónde el
+especialista QUBO resulta competitivo.
 
 ```elixir
-ResultsTable.svg("results/figures/targeted_stress_matrix/hybrid_activation_signal.svg")
+objective_gap_rows =
+  "results/processed/targeted_stress_matrix/profile_load_summary.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "mean_gap" => ResultsTable.signed_percent(row["objective_gap_pct_mean"]),
+      "ci_low" => ResultsTable.signed_percent(row["objective_gap_pct_ci95_low"]),
+      "ci_high" => ResultsTable.signed_percent(row["objective_gap_pct_ci95_high"]),
+      "wins" => "#{row["objective_win_count"]}/#{row["comparisons"]}",
+      "within_5pct" => "#{row["within_5pct_objective_count"]}/#{row["comparisons"]}"
+    }
+  end)
+
+ResultsTable.print_table(objective_gap_rows, [
+  {"profile", "Perfil"},
+  {"load_level", "Carga"},
+  {"mean_gap", "Brecha media"},
+  {"ci_low", "IC inferior"},
+  {"ci_high", "IC superior"},
+  {"wins", "Victorias"},
+  {"within_5pct", "Dentro 5%"}
+])
 ```
 
-## Visualización: Brecha Frente Al Mejor Clásico
+## Protección De Eventos Críticos
 
-Valores negativos indican que QUBO v1 fue mejor que el mejor baseline clásico
-por coste objetivo. El resultado más fuerte aparece en `burst_critical/high`.
+Esta tabla muestra si QUBO v1 protege mejor los eventos críticos que la mejor
+heurística clásica por coste objetivo. Es importante porque el valor más fuerte
+de la arquitectura híbrida no siempre es bajar la latencia global, sino mejorar
+el comportamiento bajo presión de eventos críticos.
 
 ```elixir
-ResultsTable.svg("results/figures/targeted_stress_matrix/objective_gap_ci.svg")
+critical_rows =
+  "results/processed/targeted_stress_matrix/profile_load_summary.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "critical_delta" => ResultsTable.signed_float(row["critical_delta_mean"]),
+      "ci_low" => ResultsTable.signed_float(row["critical_delta_ci95_low"]),
+      "ci_high" => ResultsTable.signed_float(row["critical_delta_ci95_high"]),
+      "hybrid_signal" => ResultsTable.percent(row["hybrid_activation_signal_rate"])
+    }
+  end)
+
+ResultsTable.print_table(critical_rows, [
+  {"profile", "Perfil"},
+  {"load_level", "Carga"},
+  {"critical_delta", "Delta críticos"},
+  {"ci_low", "IC inferior"},
+  {"ci_high", "IC superior"},
+  {"hybrid_signal", "Señal híbrida"}
+])
 ```
 
-## Visualización: Cumplimiento De Eventos Críticos
+## Trade-Off De Latencia
 
-Esta figura muestra el cambio medio en tasa de cumplimiento de deadlines
-críticos frente al clásico que minimiza el coste objetivo. Es útil porque QUBO
-v1 no siempre reduce latencia global, pero sí puede proteger mejor eventos
-críticos.
+Los valores positivos indican que QUBO v1 mejoró la latencia p99 respecto a la
+mejor heurística clásica por coste objetivo. El promedio negativo es una
+limitación útil: la formulación QUBO puede proteger eventos críticos y, aun así,
+empeorar la cola de latencia en ciertos perfiles.
 
 ```elixir
-ResultsTable.svg("results/figures/targeted_stress_matrix/critical_deadline_delta_ci.svg")
+latency_rows =
+  "results/processed/targeted_stress_matrix/profile_load_summary.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "p99_mean" => ResultsTable.signed_percent(row["p99_improvement_pct_mean"]),
+      "ci_low" => ResultsTable.signed_percent(row["p99_improvement_pct_ci95_low"]),
+      "ci_high" => ResultsTable.signed_percent(row["p99_improvement_pct_ci95_high"]),
+      "starvation_delta" => row["starvation_delta_mean"]
+    }
+  end)
+
+ResultsTable.print_table(latency_rows, [
+  {"profile", "Perfil"},
+  {"load_level", "Carga"},
+  {"p99_mean", "Mejora p99"},
+  {"ci_low", "IC inferior"},
+  {"ci_high", "IC superior"},
+  {"starvation_delta", "Delta starvation"}
+])
+```
+
+## Pruebas Pareadas
+
+Las pruebas de signo comparan victorias y derrotas por seed. Sirven para separar
+los casos donde QUBO v1 realmente domina de aquellos donde solo queda cerca.
+
+```elixir
+sign_tests =
+  "results/processed/targeted_stress_matrix/sign_tests.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "test" => row["test"],
+      "wins" => row["wins"],
+      "losses" => row["losses"],
+      "p_value" => ResultsTable.p_value(row["two_sided_sign_test_p"])
+    }
+  end)
+
+ResultsTable.print_table(sign_tests, [
+  {"profile", "Perfil"},
+  {"load_level", "Carga"},
+  {"test", "Comparación"},
+  {"wins", "Victorias"},
+  {"losses", "Derrotas"},
+  {"p_value", "p-valor"}
+])
 ```
 
 ## Validación QAOA
@@ -188,8 +289,17 @@ ResultsTable.svg("results/figures/targeted_stress_matrix/critical_deadline_delta
 qaoa_depth =
   "results/processed/qaoa_validation_small_matrix/by_depth.csv"
   |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "reps" => row["reps"],
+      "attempts" => row["attempts"],
+      "exact_matches" => row["exact_matches"],
+      "exact_match_rate" => ResultsTable.percent(row["exact_match_rate"]),
+      "average_elapsed_seconds" => ResultsTable.seconds(row["average_elapsed_seconds"])
+    }
+  end)
 
-ResultsTable.table(qaoa_depth, [
+ResultsTable.print_table(qaoa_depth, [
   {"reps", "Profundidad p"},
   {"attempts", "Intentos"},
   {"exact_matches", "Aciertos exactos"},
@@ -198,14 +308,35 @@ ResultsTable.table(qaoa_depth, [
 ])
 ```
 
-## Visualización: Validación QAOA
+## Validación QAOA Por Instancia
 
 La validación QAOA no demuestra ventaja cuántica escalable. Su papel es más
-acotado: comprobar que las instancias QUBO exportadas pueden ser consumidas por
-un flujo QAOA y recuperar soluciones óptimas en casos pequeños.
+acotado: comprobar que las instancias QUBO exportadas pueden consumirse desde un
+flujo QAOA y recuperar soluciones óptimas en instancias pequeñas.
 
 ```elixir
-ResultsTable.svg("results/figures/qaoa_validation_small_matrix/exact_match_rate_by_depth.svg")
+qaoa_instances =
+  "results/processed/qaoa_validation_small_matrix/by_instance.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "scenario" => row["scenario"],
+      "variables" => row["variable_count"],
+      "attempts" => row["attempts"],
+      "exact_rate" => ResultsTable.percent(row["exact_match_rate"]),
+      "best_gap" => ResultsTable.signed_float(row["best_objective_gap"]),
+      "average_elapsed_seconds" => ResultsTable.seconds(row["average_elapsed_seconds"])
+    }
+  end)
+
+ResultsTable.print_table(qaoa_instances, [
+  {"scenario", "Escenario"},
+  {"variables", "Variables"},
+  {"attempts", "Intentos"},
+  {"exact_rate", "Tasa exacta"},
+  {"best_gap", "Mejor brecha"},
+  {"average_elapsed_seconds", "Tiempo promedio"}
+])
 ```
 
 ## Lectura Técnica

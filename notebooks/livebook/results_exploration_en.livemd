@@ -30,13 +30,6 @@ defmodule ResultsTable do
     |> List.first()
   end
 
-  def svg(relative_path) do
-    @repo_root
-    |> Path.join(relative_path)
-    |> File.read!()
-    |> Kino.HTML.new()
-  end
-
   def table(rows, columns) do
     header = columns |> Enum.map(fn {_key, label} -> label end) |> Enum.join(" | ")
     separator = columns |> Enum.map(fn _ -> "---" end) |> Enum.join(" | ")
@@ -44,13 +37,22 @@ defmodule ResultsTable do
     body =
       rows
       |> Enum.map(fn row ->
-        columns
-        |> Enum.map(fn {key, _label} -> row |> Map.fetch!(key) |> format() end)
-        |> Enum.join(" | ")
+        values =
+          columns
+          |> Enum.map(fn {key, _label} -> row |> Map.fetch!(key) |> format() end)
+          |> Enum.join(" | ")
+
+        "| #{values} |"
       end)
       |> Enum.join("\n")
 
     "| #{header} |\n| #{separator} |\n#{body}"
+  end
+
+  def print_table(rows, columns) do
+    rows
+    |> table(columns)
+    |> IO.puts()
   end
 
   def percent(value), do: "#{Float.round(value * 100, 2)}%"
@@ -58,6 +60,9 @@ defmodule ResultsTable do
   def signed_percent(value), do: "#{Float.round(value, 2)}%"
   def signed_float(value) when value > 0, do: "+#{Float.round(value, 4)}"
   def signed_float(value), do: "#{Float.round(value, 4)}"
+  def seconds(value), do: "#{Float.round(value, 2)} s"
+  def p_value(value) when value == 0.0, do: "0.000000"
+  def p_value(value), do: :erlang.float_to_binary(value, decimals: 6)
 
   defp parse_csv([header_line | rows]) do
     headers = String.split(header_line, ",")
@@ -139,7 +144,7 @@ v3_rows =
     }
   end)
 
-ResultsTable.table(v3_rows, [
+ResultsTable.print_table(v3_rows, [
   {"profile", "Profile"},
   {"load_level", "Load"},
   {"objective_win_rate", "Wins"},
@@ -151,34 +156,132 @@ ResultsTable.table(v3_rows, [
 ])
 ```
 
-## Visualization: Hybrid Signal
+## Objective Gap And Confidence Intervals
 
-The hybrid signal is true when QUBO v1 wins by objective cost or stays within
-5% of the best classical baseline while improving at least one operational
-metric. This chart answers a practical question: when would it make sense to
-activate a QUBO specialist instead of relying only on classical heuristics?
+Negative objective gaps mean QUBO v1 outperformed the best objective-based
+classical baseline. This table is the main decision point for identifying where
+the QUBO specialist is competitive.
 
 ```elixir
-ResultsTable.svg("results/figures/targeted_stress_matrix/hybrid_activation_signal_en.svg")
+objective_gap_rows =
+  "results/processed/targeted_stress_matrix/profile_load_summary.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "mean_gap" => ResultsTable.signed_percent(row["objective_gap_pct_mean"]),
+      "ci_low" => ResultsTable.signed_percent(row["objective_gap_pct_ci95_low"]),
+      "ci_high" => ResultsTable.signed_percent(row["objective_gap_pct_ci95_high"]),
+      "wins" => "#{row["objective_win_count"]}/#{row["comparisons"]}",
+      "within_5pct" => "#{row["within_5pct_objective_count"]}/#{row["comparisons"]}"
+    }
+  end)
+
+ResultsTable.print_table(objective_gap_rows, [
+  {"profile", "Profile"},
+  {"load_level", "Load"},
+  {"mean_gap", "Mean gap"},
+  {"ci_low", "CI low"},
+  {"ci_high", "CI high"},
+  {"wins", "Wins"},
+  {"within_5pct", "Within 5%"}
+])
 ```
 
-## Visualization: Gap Against The Best Classical Baseline
+## Critical Event Protection
 
-Negative values mean QUBO v1 outperformed the best classical baseline by
-objective cost. The strongest signal appears in `burst_critical/high`.
+This table shows whether QUBO v1 protects critical events better than the
+objective-best classical baseline. It is important because the strongest value
+of the hybrid architecture is not always lower global latency, but better
+behavior under critical-event pressure.
 
 ```elixir
-ResultsTable.svg("results/figures/targeted_stress_matrix/objective_gap_ci_en.svg")
+critical_rows =
+  "results/processed/targeted_stress_matrix/profile_load_summary.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "critical_delta" => ResultsTable.signed_float(row["critical_delta_mean"]),
+      "ci_low" => ResultsTable.signed_float(row["critical_delta_ci95_low"]),
+      "ci_high" => ResultsTable.signed_float(row["critical_delta_ci95_high"]),
+      "hybrid_signal" => ResultsTable.percent(row["hybrid_activation_signal_rate"])
+    }
+  end)
+
+ResultsTable.print_table(critical_rows, [
+  {"profile", "Profile"},
+  {"load_level", "Load"},
+  {"critical_delta", "Critical delta"},
+  {"ci_low", "CI low"},
+  {"ci_high", "CI high"},
+  {"hybrid_signal", "Hybrid signal"}
+])
 ```
 
-## Visualization: Critical Deadline Hit Rate
+## Latency Trade-Off
 
-This figure shows the mean critical-deadline hit-rate delta against the
-objective-best classical baseline. It is useful because QUBO v1 does not always
-reduce global latency, but it can protect critical events more effectively.
+Positive values mean QUBO v1 improved p99 latency over the objective-best
+classical baseline. The negative average is a useful limitation: the QUBO
+formulation can improve critical-event handling while still hurting tail
+latency in some profiles.
 
 ```elixir
-ResultsTable.svg("results/figures/targeted_stress_matrix/critical_deadline_delta_ci_en.svg")
+latency_rows =
+  "results/processed/targeted_stress_matrix/profile_load_summary.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "p99_mean" => ResultsTable.signed_percent(row["p99_improvement_pct_mean"]),
+      "ci_low" => ResultsTable.signed_percent(row["p99_improvement_pct_ci95_low"]),
+      "ci_high" => ResultsTable.signed_percent(row["p99_improvement_pct_ci95_high"]),
+      "starvation_delta" => row["starvation_delta_mean"]
+    }
+  end)
+
+ResultsTable.print_table(latency_rows, [
+  {"profile", "Profile"},
+  {"load_level", "Load"},
+  {"p99_mean", "p99 improvement"},
+  {"ci_low", "CI low"},
+  {"ci_high", "CI high"},
+  {"starvation_delta", "Starvation delta"}
+])
+```
+
+## Paired Sign Tests
+
+The sign tests compare seed-level wins and losses. They help separate a true
+dominance signal from cases where QUBO v1 only stays close to classical
+heuristics.
+
+```elixir
+sign_tests =
+  "results/processed/targeted_stress_matrix/sign_tests.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "test" => row["test"],
+      "wins" => row["wins"],
+      "losses" => row["losses"],
+      "p_value" => ResultsTable.p_value(row["two_sided_sign_test_p"])
+    }
+  end)
+
+ResultsTable.print_table(sign_tests, [
+  {"profile", "Profile"},
+  {"load_level", "Load"},
+  {"test", "Comparison"},
+  {"wins", "Wins"},
+  {"losses", "Losses"},
+  {"p_value", "p-value"}
+])
 ```
 
 ## QAOA Validation
@@ -187,8 +290,17 @@ ResultsTable.svg("results/figures/targeted_stress_matrix/critical_deadline_delta
 qaoa_depth =
   "results/processed/qaoa_validation_small_matrix/by_depth.csv"
   |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "reps" => row["reps"],
+      "attempts" => row["attempts"],
+      "exact_matches" => row["exact_matches"],
+      "exact_match_rate" => ResultsTable.percent(row["exact_match_rate"]),
+      "average_elapsed_seconds" => ResultsTable.seconds(row["average_elapsed_seconds"])
+    }
+  end)
 
-ResultsTable.table(qaoa_depth, [
+ResultsTable.print_table(qaoa_depth, [
   {"reps", "Depth p"},
   {"attempts", "Attempts"},
   {"exact_matches", "Exact matches"},
@@ -197,14 +309,35 @@ ResultsTable.table(qaoa_depth, [
 ])
 ```
 
-## Visualization: QAOA Validation
+## QAOA Instance-Level Check
 
 The QAOA validation does not demonstrate scalable quantum advantage. Its role is
 narrower: it checks whether exported QUBO instances can be consumed by a QAOA
 workflow and recover optimal solutions on small instances.
 
 ```elixir
-ResultsTable.svg("results/figures/qaoa_validation_small_matrix/exact_match_rate_by_depth_en.svg")
+qaoa_instances =
+  "results/processed/qaoa_validation_small_matrix/by_instance.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "scenario" => row["scenario"],
+      "variables" => row["variable_count"],
+      "attempts" => row["attempts"],
+      "exact_rate" => ResultsTable.percent(row["exact_match_rate"]),
+      "best_gap" => ResultsTable.signed_float(row["best_objective_gap"]),
+      "average_elapsed_seconds" => ResultsTable.seconds(row["average_elapsed_seconds"])
+    }
+  end)
+
+ResultsTable.print_table(qaoa_instances, [
+  {"scenario", "Scenario"},
+  {"variables", "Variables"},
+  {"attempts", "Attempts"},
+  {"exact_rate", "Exact rate"},
+  {"best_gap", "Best gap"},
+  {"average_elapsed_seconds", "Mean runtime"}
+])
 ```
 
 ## Technical Reading
