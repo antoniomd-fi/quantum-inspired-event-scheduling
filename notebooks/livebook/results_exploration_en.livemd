@@ -30,6 +30,13 @@ defmodule ResultsTable do
     |> List.first()
   end
 
+  def svg(relative_path) do
+    @repo_root
+    |> Path.join(relative_path)
+    |> File.read!()
+    |> Kino.HTML.new()
+  end
+
   def table(rows, columns) do
     header = columns |> Enum.map(fn {_key, label} -> label end) |> Enum.join(" | ")
     separator = columns |> Enum.map(fn _ -> "---" end) |> Enum.join(" | ")
@@ -68,11 +75,20 @@ defmodule ResultsTable do
   defp cast("false"), do: false
 
   defp cast(value) do
+    value = String.trim(value)
+
     cond do
       String.match?(value, ~r/^-?\d+$/) -> String.to_integer(value)
-      String.match?(value, ~r/^-?(\d+\.\d+|\d+\.|\.\d+)(e-?\d+)?$/i) -> String.to_float(value)
-      String.match?(value, ~r/^-?\d+e-?\d+$/i) -> String.to_float(value)
+      String.match?(value, ~r/^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$/) -> value |> normalize_float() |> String.to_float()
       true -> value
+    end
+  end
+
+  defp normalize_float(value) do
+    if (String.contains?(value, "e") or String.contains?(value, "E")) and not String.contains?(value, ".") do
+      Regex.replace(~r/^([+-]?\d+)([eE][+-]?\d+)$/, value, "\\1.0\\2")
+    else
+      value
     end
   end
 
@@ -100,6 +116,11 @@ qaoa = ResultsTable.first_row("results/processed/qaoa_validation_small_matrix/ag
 ```
 
 ## Targeted Matrix
+
+The targeted matrix focuses on cases where burstiness, high load, critical
+events, worker heterogeneity, and starvation/fairness pressure overlap. The goal
+is not to prove that QUBO always wins, but to identify when it becomes useful as
+a specialist optimizer in a hybrid scheduling architecture.
 
 ```elixir
 v3_rows =
@@ -130,6 +151,36 @@ ResultsTable.table(v3_rows, [
 ])
 ```
 
+## Visualization: Hybrid Signal
+
+The hybrid signal is true when QUBO v1 wins by objective cost or stays within
+5% of the best classical baseline while improving at least one operational
+metric. This chart answers a practical question: when would it make sense to
+activate a QUBO specialist instead of relying only on classical heuristics?
+
+```elixir
+ResultsTable.svg("results/figures/targeted_stress_matrix/hybrid_activation_signal_en.svg")
+```
+
+## Visualization: Gap Against The Best Classical Baseline
+
+Negative values mean QUBO v1 outperformed the best classical baseline by
+objective cost. The strongest signal appears in `burst_critical/high`.
+
+```elixir
+ResultsTable.svg("results/figures/targeted_stress_matrix/objective_gap_ci_en.svg")
+```
+
+## Visualization: Critical Deadline Hit Rate
+
+This figure shows the mean critical-deadline hit-rate delta against the
+objective-best classical baseline. It is useful because QUBO v1 does not always
+reduce global latency, but it can protect critical events more effectively.
+
+```elixir
+ResultsTable.svg("results/figures/targeted_stress_matrix/critical_deadline_delta_ci_en.svg")
+```
+
 ## QAOA Validation
 
 ```elixir
@@ -144,6 +195,16 @@ ResultsTable.table(qaoa_depth, [
   {"exact_match_rate", "Exact-match rate"},
   {"average_elapsed_seconds", "Mean runtime"}
 ])
+```
+
+## Visualization: QAOA Validation
+
+The QAOA validation does not demonstrate scalable quantum advantage. Its role is
+narrower: it checks whether exported QUBO instances can be consumed by a QAOA
+workflow and recover optimal solutions on small instances.
+
+```elixir
+ResultsTable.svg("results/figures/qaoa_validation_small_matrix/exact_match_rate_by_depth_en.svg")
 ```
 
 ## Technical Reading

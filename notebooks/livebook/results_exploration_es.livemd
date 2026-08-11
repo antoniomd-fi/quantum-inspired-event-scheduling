@@ -30,6 +30,13 @@ defmodule ResultsTable do
     |> List.first()
   end
 
+  def svg(relative_path) do
+    @repo_root
+    |> Path.join(relative_path)
+    |> File.read!()
+    |> Kino.HTML.new()
+  end
+
   def table(rows, columns) do
     header = columns |> Enum.map(fn {_key, label} -> label end) |> Enum.join(" | ")
     separator = columns |> Enum.map(fn _ -> "---" end) |> Enum.join(" | ")
@@ -68,11 +75,20 @@ defmodule ResultsTable do
   defp cast("false"), do: false
 
   defp cast(value) do
+    value = String.trim(value)
+
     cond do
       String.match?(value, ~r/^-?\d+$/) -> String.to_integer(value)
-      String.match?(value, ~r/^-?(\d+\.\d+|\d+\.|\.\d+)(e-?\d+)?$/i) -> String.to_float(value)
-      String.match?(value, ~r/^-?\d+e-?\d+$/i) -> String.to_float(value)
+      String.match?(value, ~r/^[+-]?(\d+(\.\d*)?|\.\d+)([eE][+-]?\d+)?$/) -> value |> normalize_float() |> String.to_float()
       true -> value
+    end
+  end
+
+  defp normalize_float(value) do
+    if (String.contains?(value, "e") or String.contains?(value, "E")) and not String.contains?(value, ".") do
+      Regex.replace(~r/^([+-]?\d+)([eE][+-]?\d+)$/, value, "\\1.0\\2")
+    else
+      value
     end
   end
 
@@ -100,6 +116,11 @@ qaoa = ResultsTable.first_row("results/processed/qaoa_validation_small_matrix/ag
 ```
 
 ## Matriz Dirigida
+
+La matriz dirigida evalúa perfiles donde se combinan ráfagas, carga alta,
+eventos críticos, heterogeneidad de workers y presión de starvation/fairness.
+Aquí no buscamos que QUBO gane siempre, sino identificar cuándo aporta una señal
+razonable para una arquitectura híbrida.
 
 ```elixir
 v3_rows =
@@ -130,6 +151,37 @@ ResultsTable.table(v3_rows, [
 ])
 ```
 
+## Visualización: Señal Híbrida
+
+La señal híbrida se activa cuando QUBO v1 gana por objetivo o queda dentro del
+5% del mejor clásico mientras mejora alguna métrica operacional relevante. En
+la práctica, esta gráfica ayuda a responder: ¿cuándo tendría sentido activar un
+optimizador QUBO especializado en vez de usar solo una heurística clásica?
+
+```elixir
+ResultsTable.svg("results/figures/targeted_stress_matrix/hybrid_activation_signal.svg")
+```
+
+## Visualización: Brecha Frente Al Mejor Clásico
+
+Valores negativos indican que QUBO v1 fue mejor que el mejor baseline clásico
+por coste objetivo. El resultado más fuerte aparece en `burst_critical/high`.
+
+```elixir
+ResultsTable.svg("results/figures/targeted_stress_matrix/objective_gap_ci.svg")
+```
+
+## Visualización: Cumplimiento De Eventos Críticos
+
+Esta figura muestra el cambio medio en tasa de cumplimiento de deadlines
+críticos frente al clásico que minimiza el coste objetivo. Es útil porque QUBO
+v1 no siempre reduce latencia global, pero sí puede proteger mejor eventos
+críticos.
+
+```elixir
+ResultsTable.svg("results/figures/targeted_stress_matrix/critical_deadline_delta_ci.svg")
+```
+
 ## Validación QAOA
 
 ```elixir
@@ -144,6 +196,16 @@ ResultsTable.table(qaoa_depth, [
   {"exact_match_rate", "Tasa de acierto"},
   {"average_elapsed_seconds", "Tiempo promedio"}
 ])
+```
+
+## Visualización: Validación QAOA
+
+La validación QAOA no demuestra ventaja cuántica escalable. Su papel es más
+acotado: comprobar que las instancias QUBO exportadas pueden ser consumidas por
+un flujo QAOA y recuperar soluciones óptimas en casos pequeños.
+
+```elixir
+ResultsTable.svg("results/figures/qaoa_validation_small_matrix/exact_match_rate_by_depth.svg")
 ```
 
 ## Lectura Técnica
