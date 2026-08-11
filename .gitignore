@@ -1,0 +1,33 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# Elixir / Erlang
+_build/
+deps/
+*.ez
+erl_crash.dump
+.elixir_ls/
+code/event_scheduler_sim/results/
+
+# Livebook
+*.livemd.bak
+
+# Runtime scratch data
+tmp/
+cache/
+results/raw/*_smoke/
