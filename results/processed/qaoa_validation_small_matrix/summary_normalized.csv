@@ -1,0 +1,6 @@
+instance_id,scenario,profile,batch_index,event_count,worker_count,variable_count,best_reps,best_seed,exact_objective,qaoa_objective,objective_gap,relative_gap,feasible,exact_match,same_assignment_as_exact,constraint_violations,elapsed_seconds,assignment_bitstring
+baseline_small_sequencing_batch_01,baseline_small,sequencing,1,2,3,6,1,1,532.682593,532.682593,0.0,0.0,True,True,True,0,3.021,100010
+steady_load_sequencing_batch_01,steady_load,sequencing,1,2,4,8,1,1,703.325625,703.325625,0.0,0.0,True,True,True,0,12.556,10000100
+burst_load_sequencing_batch_01,burst_load,sequencing,1,2,3,6,1,1,1183.583704,1183.583704,0.0,0.0,True,True,False,0,2.59,100010
+critical_priority_sequencing_batch_01,critical_priority,sequencing,1,2,3,6,1,1,970.666667,970.666667,0.0,0.0,True,True,False,0,2.529,001010
+heterogeneous_workers_sequencing_batch_01,heterogeneous_workers,sequencing,1,2,3,6,1,1,607.91037,607.91037,0.0,0.0,True,True,True,0,2.64,010100

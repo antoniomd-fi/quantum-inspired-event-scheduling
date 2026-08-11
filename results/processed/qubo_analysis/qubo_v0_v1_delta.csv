@@ -1,0 +1,6 @@
+scenario,qubo_v0_objective,qubo_v1_objective,qubo_v1_rank,qubo_v1_improvement_vs_v0,qubo_v1_improvement_vs_v0_pct,priority_aware_objective,qubo_v1_gap_vs_priority_aware,shortest_queue_objective,qubo_v1_gap_vs_shortest_queue,qubo_v1_critical_deadline_hit_rate,priority_aware_critical_deadline_hit_rate
+baseline_small,230.4472,227.9528,3,2.4944,1.082417,206.7056,21.2472,202.1444,25.8084,1,1
+steady_load,201.1125,201.1125,5,0.0,0.0,200.9889,0.1236,196.2389,4.8736,1,1
+burst_load,744.3125,600.7891,1,143.5234,19.28268,605.2344,-4.4453,900.4438,-299.6547,1,1
+critical_priority,856.4457,599.4586,2,256.9871,30.006234,563.3743,36.0843,948.1257,-348.6671,1,1
+heterogeneous_workers,440.8,438.95,3,1.85,0.419691,389.89,49.06,367.2571,71.6929,1,1

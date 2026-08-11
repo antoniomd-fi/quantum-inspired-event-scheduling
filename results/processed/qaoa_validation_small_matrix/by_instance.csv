@@ -1,0 +1,6 @@
+instance_id,scenario,variable_count,attempts,feasible_attempts,feasible_rate,exact_matches,exact_match_rate,best_reps,best_seed,best_objective_gap,best_relative_gap,average_elapsed_seconds,max_elapsed_seconds
+baseline_small_sequencing_batch_01,baseline_small,6,10,10,1.0,10,1.0,1,1,0.0,0.0,3.2107,4.428
+burst_load_sequencing_batch_01,burst_load,6,10,10,1.0,10,1.0,1,1,0.0,0.0,3.0295,4.25
+critical_priority_sequencing_batch_01,critical_priority,6,10,10,1.0,10,1.0,1,1,0.0,0.0,3.1464,4.618
+heterogeneous_workers_sequencing_batch_01,heterogeneous_workers,6,10,10,1.0,10,1.0,1,1,0.0,0.0,2.9792,4.299
+steady_load_sequencing_batch_01,steady_load,8,10,10,1.0,9,0.9,1,1,0.0,0.0,17.1743,24.723

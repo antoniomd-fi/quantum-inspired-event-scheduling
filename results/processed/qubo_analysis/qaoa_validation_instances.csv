@@ -1,0 +1,5 @@
+instance_id,scenario,variable_count,best_reps,best_seed,exact_objective,qaoa_objective,objective_gap,relative_gap,feasible,exact_match,same_assignment_as_exact,elapsed_seconds
+baseline_small_sequencing_batch_01,baseline_small,9,1,7,607.753704,607.753704,0,0,True,True,True,66.732
+burst_load_sequencing_batch_01,burst_load,9,1,7,872.594815,872.594816,9.999999974752427e-07,1.1460072650961634e-09,True,True,True,66.919
+critical_priority_sequencing_batch_01,critical_priority,9,1,7,816,816,0,0,True,True,True,69.363
+heterogeneous_workers_sequencing_batch_01,heterogeneous_workers,9,1,7,917.511481,917.511482,9.999999974752427e-07,1.0899046150194635e-09,True,True,True,79.746

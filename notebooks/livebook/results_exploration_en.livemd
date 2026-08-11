@@ -1,0 +1,159 @@
+# Reproducible Results Exploration
+
+This Livebook summarizes the main results of the event-driven scheduling
+experiment with classical heuristics, QUBO-based strategies, and small-instance
+QAOA validation.
+
+The goal is to make the curated CSV outputs easy to inspect without external
+analysis dependencies.
+
+## Data Loading
+
+```elixir
+defmodule ResultsTable do
+  @moduledoc false
+
+  @repo_root Path.expand("../..", __DIR__)
+
+  def read_csv(relative_path) do
+    path = Path.join(@repo_root, relative_path)
+
+    path
+    |> File.read!()
+    |> String.split(~r/\R/, trim: true)
+    |> parse_csv()
+  end
+
+  def first_row(relative_path) do
+    relative_path
+    |> read_csv()
+    |> List.first()
+  end
+
+  def table(rows, columns) do
+    header = columns |> Enum.map(fn {_key, label} -> label end) |> Enum.join(" | ")
+    separator = columns |> Enum.map(fn _ -> "---" end) |> Enum.join(" | ")
+
+    body =
+      rows
+      |> Enum.map(fn row ->
+        columns
+        |> Enum.map(fn {key, _label} -> row |> Map.fetch!(key) |> format() end)
+        |> Enum.join(" | ")
+      end)
+      |> Enum.join("\n")
+
+    "| #{header} |\n| #{separator} |\n#{body}"
+  end
+
+  def percent(value), do: "#{Float.round(value * 100, 2)}%"
+  def signed_percent(value) when value > 0, do: "+#{Float.round(value, 2)}%"
+  def signed_percent(value), do: "#{Float.round(value, 2)}%"
+  def signed_float(value) when value > 0, do: "+#{Float.round(value, 4)}"
+  def signed_float(value), do: "#{Float.round(value, 4)}"
+
+  defp parse_csv([header_line | rows]) do
+    headers = String.split(header_line, ",")
+
+    Enum.map(rows, fn row ->
+      values = String.split(row, ",")
+
+      headers
+      |> Enum.zip(values)
+      |> Map.new(fn {key, value} -> {key, cast(value)} end)
+    end)
+  end
+
+  defp cast("true"), do: true
+  defp cast("false"), do: false
+
+  defp cast(value) do
+    cond do
+      String.match?(value, ~r/^-?\d+$/) -> String.to_integer(value)
+      String.match?(value, ~r/^-?(\d+\.\d+|\d+\.|\.\d+)(e-?\d+)?$/i) -> String.to_float(value)
+      String.match?(value, ~r/^-?\d+e-?\d+$/i) -> String.to_float(value)
+      true -> value
+    end
+  end
+
+  defp format(value) when is_float(value), do: :erlang.float_to_binary(value, decimals: 4)
+  defp format(value), do: to_string(value)
+end
+```
+
+## Overall Result
+
+```elixir
+v2 = ResultsTable.first_row("results/processed/extended_event_driven_matrix/summary.csv")
+v3 = ResultsTable.first_row("results/processed/targeted_stress_matrix/overall_summary.csv")
+qaoa = ResultsTable.first_row("results/processed/qaoa_validation_small_matrix/aggregate.csv")
+
+%{
+  "v2_general_scenarios" => v2["generated_scenario_count"],
+  "v2_qubo_v1_wins" => "#{v2["qubo_v1_wins_best_classical_count"]}/#{v2["generated_scenario_count"]}",
+  "v2_within_5_percent" => "#{v2["qubo_v1_within_5pct_best_classical_count"]}/#{v2["generated_scenario_count"]}",
+  "v3_targeted_comparisons" => v3["comparisons"],
+  "v3_qubo_v1_wins" => "#{v3["objective_win_count"]}/#{v3["comparisons"]}",
+  "v3_hybrid_activation_signal" => "#{v3["hybrid_activation_signal_count"]}/#{v3["comparisons"]}",
+  "qaoa_exact_match_rate" => ResultsTable.percent(qaoa["exact_match_rate"])
+}
+```
+
+## Targeted Matrix
+
+```elixir
+v3_rows =
+  "results/processed/targeted_stress_matrix/profile_load_summary.csv"
+  |> ResultsTable.read_csv()
+  |> Enum.map(fn row ->
+    %{
+      "profile" => row["profile"],
+      "load_level" => row["load_level"],
+      "objective_win_rate" => ResultsTable.percent(row["objective_win_rate"]),
+      "within_5pct_objective_rate" => ResultsTable.percent(row["within_5pct_objective_rate"]),
+      "hybrid_activation_signal_rate" => ResultsTable.percent(row["hybrid_activation_signal_rate"]),
+      "objective_gap_pct_mean" => ResultsTable.signed_percent(row["objective_gap_pct_mean"]),
+      "critical_delta_mean" => ResultsTable.signed_float(row["critical_delta_mean"]),
+      "p99_improvement_pct_mean" => ResultsTable.signed_percent(row["p99_improvement_pct_mean"])
+    }
+  end)
+
+ResultsTable.table(v3_rows, [
+  {"profile", "Profile"},
+  {"load_level", "Load"},
+  {"objective_win_rate", "Wins"},
+  {"within_5pct_objective_rate", "Within 5%"},
+  {"hybrid_activation_signal_rate", "Hybrid signal"},
+  {"objective_gap_pct_mean", "Objective gap"},
+  {"critical_delta_mean", "Critical delta"},
+  {"p99_improvement_pct_mean", "p99 improvement"}
+])
+```
+
+## QAOA Validation
+
+```elixir
+qaoa_depth =
+  "results/processed/qaoa_validation_small_matrix/by_depth.csv"
+  |> ResultsTable.read_csv()
+
+ResultsTable.table(qaoa_depth, [
+  {"reps", "Depth p"},
+  {"attempts", "Attempts"},
+  {"exact_matches", "Exact matches"},
+  {"exact_match_rate", "Exact-match rate"},
+  {"average_elapsed_seconds", "Mean runtime"}
+])
+```
+
+## Technical Reading
+
+```elixir
+[
+  "QUBO v1 should not be treated as a universal replacement for classical heuristics.",
+  "The strongest signal appears in burst_critical/high, where QUBO v1 wins in 90% of seeds.",
+  "The targeted matrix supports a hybrid architecture: classical heuristics by default and QUBO as a specialist optimizer.",
+  "fairness_starvation is a useful negative result: the current formulation does not dominate when fairness/starvation is the primary pressure.",
+  "QAOA validates the QUBO -> variational quantum optimization path on small instances, without claiming scalable quantum advantage."
+]
+```

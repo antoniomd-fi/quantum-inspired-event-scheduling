@@ -1,0 +1,6 @@
+strategy,win_count,win_rate
+qubo_batch_exact,0,0.0
+qubo_batch_exact_sequencing,9,0.075
+priority_aware,61,0.5083333333333333
+shortest_queue,35,0.2916666666666667
+min_cost_greedy,15,0.125

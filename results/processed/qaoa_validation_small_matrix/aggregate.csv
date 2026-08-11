@@ -1,0 +1,3 @@
+metric,instances,attempts,feasible_count,feasible_rate,exact_match_count,exact_match_rate,average_elapsed_seconds
+all_attempts,5,50,50,1.0,49,0.98,5.90802
+best_attempt_per_instance,5,5,5,1.0,5,1.0,4.6672

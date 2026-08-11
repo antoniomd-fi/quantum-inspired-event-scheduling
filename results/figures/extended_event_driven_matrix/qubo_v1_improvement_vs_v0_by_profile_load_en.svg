@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img">
+<rect width="100%" height="100%" fill="#ffffff" />
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}</style>
+<text x="640.00" y="34.00" font-size="22" font-weight="700" text-anchor="middle">QUBO v1 improvement vs QUBO v0</text>
+<text x="22.00" y="295.00" font-size="14" font-weight="400" text-anchor="start" transform="rotate(-90.00 22.00 295.00)">Improvement (%)</text>
+<line x1="90" y1="80" x2="90" y2="510" stroke="#243241" stroke-width="1.2" />
+<line x1="90" y1="510" x2="1250" y2="510" stroke="#243241" stroke-width="1.2" />
+<line x1="90" y1="510.00" x2="1250" y2="510.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="424.00" x2="1250" y2="424.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="338.00" x2="1250" y2="338.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="252.00" x2="1250" y2="252.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="166.00" x2="1250" y2="166.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="80.00" x2="1250" y2="80.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="489.52" x2="1250" y2="489.52" stroke="#4b5563" stroke-width="1" />
+<rect x="111.75" y="307.76" width="53.17" height="181.76" fill="#21745f" rx="2" />
+<text x="138.33" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 138.33 600.00)">Burst / Medium</text>
+<rect x="208.42" y="247.47" width="53.17" height="242.05" fill="#21745f" rx="2" />
+<text x="235.00" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 235.00 600.00)">Burst / High</text>
+<rect x="305.08" y="396.16" width="53.17" height="93.37" fill="#21745f" rx="2" />
+<text x="331.67" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 331.67 600.00)">Burst / Overload</text>
+<rect x="401.75" y="406.65" width="53.17" height="82.87" fill="#21745f" rx="2" />
+<text x="428.33" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 428.33 600.00)">Saturation / Medium</text>
+<rect x="498.42" y="454.72" width="53.17" height="34.80" fill="#21745f" rx="2" />
+<text x="525.00" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 525.00 600.00)">Saturation / High</text>
+<rect x="595.08" y="489.52" width="53.17" height="15.93" fill="#9b3b3b" rx="2" />
+<text x="621.67" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 621.67 600.00)">Saturation / Overload</text>
+<rect x="691.75" y="237.31" width="53.17" height="252.21" fill="#21745f" rx="2" />
+<text x="718.33" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 718.33 600.00)">Critical-heavy / Medium</text>
+<rect x="788.42" y="266.10" width="53.17" height="223.42" fill="#21745f" rx="2" />
+<text x="815.00" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 815.00 600.00)">Critical-heavy / High</text>
+<rect x="885.08" y="394.71" width="53.17" height="94.82" fill="#21745f" rx="2" />
+<text x="911.67" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 911.67 600.00)">Critical-heavy / Overload</text>
+<rect x="981.75" y="390.39" width="53.17" height="99.13" fill="#21745f" rx="2" />
+<text x="1008.33" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 1008.33 600.00)">Heterogeneous / Medium</text>
+<rect x="1078.42" y="449.16" width="53.17" height="40.36" fill="#21745f" rx="2" />
+<text x="1105.00" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 1105.00 600.00)">Heterogeneous / High</text>
+<rect x="1175.08" y="460.76" width="53.17" height="28.77" fill="#21745f" rx="2" />
+<text x="1201.67" y="600.00" font-size="11" font-weight="400" text-anchor="middle" transform="rotate(-35.00 1201.67 600.00)">Heterogeneous / Overload</text>
+<text x="80.00" y="514.00" font-size="11" font-weight="400" text-anchor="end">-0.50</text>
+<text x="80.00" y="428.00" font-size="11" font-weight="400" text-anchor="end">1.60</text>
+<text x="80.00" y="342.00" font-size="11" font-weight="400" text-anchor="end">3.70</text>
+<text x="80.00" y="256.00" font-size="11" font-weight="400" text-anchor="end">5.80</text>
+<text x="80.00" y="170.00" font-size="11" font-weight="400" text-anchor="end">7.90</text>
+<text x="80.00" y="84.00" font-size="11" font-weight="400" text-anchor="end">10.00</text>
+</svg>

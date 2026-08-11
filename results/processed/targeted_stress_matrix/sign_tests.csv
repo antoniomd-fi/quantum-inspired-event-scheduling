@@ -1,0 +1,17 @@
+profile,load_level,test,wins,losses,ties,two_sided_sign_test_p
+burst_critical,high,objective_vs_best_classical,27,3,0,8e-06
+burst_critical,high,objective_vs_qubo_v0,30,0,0,0.0
+burst_critical,overload,objective_vs_best_classical,5,25,0,0.000325
+burst_critical,overload,objective_vs_qubo_v0,20,10,0,0.098737
+flooding_critical,high,objective_vs_best_classical,3,27,0,8e-06
+flooding_critical,high,objective_vs_qubo_v0,30,0,0,0.0
+flooding_critical,overload,objective_vs_best_classical,0,30,0,0.0
+flooding_critical,overload,objective_vs_qubo_v0,28,2,0,1e-06
+heterogeneous_pressure,high,objective_vs_best_classical,5,25,0,0.000325
+heterogeneous_pressure,high,objective_vs_qubo_v0,16,14,0,0.855536
+heterogeneous_pressure,overload,objective_vs_best_classical,4,26,0,5.9e-05
+heterogeneous_pressure,overload,objective_vs_qubo_v0,16,14,0,0.855536
+fairness_starvation,high,objective_vs_best_classical,0,30,0,0.0
+fairness_starvation,high,objective_vs_qubo_v0,16,14,0,0.855536
+fairness_starvation,overload,objective_vs_best_classical,0,30,0,0.0
+fairness_starvation,overload,objective_vs_qubo_v0,11,19,0,0.200488

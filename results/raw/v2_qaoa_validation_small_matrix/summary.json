@@ -1,0 +1,2140 @@
+{
+  "attempt_count": 50,
+  "attempts": [
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.021,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 45,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 1.727,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 51,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.426,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 62,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 1.969,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 50,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.38,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 48,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.254,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 48,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.19,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 45,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.838,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 29,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.428,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 38,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.874,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "qiskit_fval_scaled": 0.002663412965000056,
+      "qiskit_sample_count": 56,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "baseline_small",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "10000100",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 12.556,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 82,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "10000100",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 10.835,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 138,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "00101000",
+      "assignment_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 10.663,
+      "exact_match": false,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 113.62750000000005,
+      "profile": "sequencing",
+      "qaoa_objective": 816.953125,
+      "qiskit_fval_scaled": 0.004084765625000042,
+      "qiskit_sample_count": 151,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.16155745782758885,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_c"
+        ],
+        "event_002": [
+          "worker_a"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "10000100",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 10.762,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 95,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "00010100",
+      "assignment_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 12.064,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 71,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_d"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "00010100",
+      "assignment_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 24.723,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 117,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_d"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "00010100",
+      "assignment_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 23.729,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 118,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_d"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "00010100",
+      "assignment_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 19.825,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 47,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_d"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "00010100",
+      "assignment_vector": [
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 24.647,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 94,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_d"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "10000100",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 21.939,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "qiskit_fval_scaled": 0.0035166281249998654,
+      "qiskit_sample_count": 118,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "steady_load",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_a"
+        ],
+        "event_002": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 8
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.59,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 45,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_a"
+        ],
+        "event_008": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 1.803,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 47,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_b"
+        ],
+        "event_008": [
+          "worker_a"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.45,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 62,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_b"
+        ],
+        "event_008": [
+          "worker_a"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 1.868,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 46,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_a"
+        ],
+        "event_008": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.424,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 44,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_a"
+        ],
+        "event_008": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.016,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 45,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_a"
+        ],
+        "event_008": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.092,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 46,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_a"
+        ],
+        "event_008": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.549,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 30,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_b"
+        ],
+        "event_008": [
+          "worker_a"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.25,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 39,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_a"
+        ],
+        "event_008": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "100010",
+      "assignment_vector": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.253,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "qiskit_fval_scaled": 0.0059179185200000095,
+      "qiskit_sample_count": 60,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "burst_load",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_007": [
+          "worker_a"
+        ],
+        "event_008": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "001010",
+      "assignment_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.529,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 46,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_c"
+        ],
+        "event_007_critical": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "001100",
+      "assignment_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 1.772,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 49,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_c"
+        ],
+        "event_007_critical": [
+          "worker_a"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.033,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 62,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_b"
+        ],
+        "event_007_critical": [
+          "worker_a"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "001010",
+      "assignment_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 1.878,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 44,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_c"
+        ],
+        "event_007_critical": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "001010",
+      "assignment_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.113,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 48,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_c"
+        ],
+        "event_007_critical": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "001010",
+      "assignment_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.618,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 44,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_c"
+        ],
+        "event_007_critical": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010001",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.178,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 42,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_b"
+        ],
+        "event_007_critical": [
+          "worker_c"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "001100",
+      "assignment_vector": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.972,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 28,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_c"
+        ],
+        "event_007_critical": [
+          "worker_a"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010001",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.526,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 54,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_b"
+        ],
+        "event_007_critical": [
+          "worker_c"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "001010",
+      "assignment_vector": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.845,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "qiskit_fval_scaled": 0.004853333334999932,
+      "qiskit_sample_count": 33,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "critical_priority",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_006_critical": [
+          "worker_c"
+        ],
+        "event_007_critical": [
+          "worker_b"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.64,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 48,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 1.785,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 46,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.029,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 62,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 1.933,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 46,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.319,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 43,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 1,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.299,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 48,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 1,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.212,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 36,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 2,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.381,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 27,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 3,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 4.03,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 49,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 4,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    },
+    {
+      "assignment_bitstring": "010100",
+      "assignment_vector": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        0
+      ],
+      "batch_index": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.164,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "maxiter": 20,
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "qiskit_fval_scaled": 0.003039551849999933,
+      "qiskit_sample_count": 60,
+      "qiskit_status": "OptimizationResultStatus.SUCCESS",
+      "relative_gap": 0.0,
+      "reps": 2,
+      "scale_factor": 5e-06,
+      "scenario": "heterogeneous_workers",
+      "seed": 5,
+      "selected_worker_by_event": {
+        "event_001": [
+          "worker_standard"
+        ],
+        "event_002": [
+          "worker_fast"
+        ]
+      },
+      "shots": 256,
+      "variable_count": 6
+    }
+  ],
+  "elapsed_seconds": 295.646,
+  "instance_count": 5,
+  "qiskit_versions": {
+    "qiskit": "2.4.2",
+    "qiskit-algorithms": "0.4.0",
+    "qiskit-optimization": "0.7.0"
+  },
+  "schema_version": "qaoa-validation-v1",
+  "summaries": [
+    {
+      "assignment_bitstring": "100010",
+      "batch_index": 1,
+      "best_reps": 1,
+      "best_seed": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 3.021,
+      "event_count": 2,
+      "exact_match": true,
+      "exact_objective": 532.682593,
+      "feasible": true,
+      "instance_id": "baseline_small_sequencing_batch_01",
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 532.682593,
+      "relative_gap": 0.0,
+      "same_assignment_as_exact": true,
+      "scenario": "baseline_small",
+      "variable_count": 6,
+      "worker_count": 3
+    },
+    {
+      "assignment_bitstring": "10000100",
+      "batch_index": 1,
+      "best_reps": 1,
+      "best_seed": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 12.556,
+      "event_count": 2,
+      "exact_match": true,
+      "exact_objective": 703.325625,
+      "feasible": true,
+      "instance_id": "steady_load_sequencing_batch_01",
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 703.325625,
+      "relative_gap": 0.0,
+      "same_assignment_as_exact": true,
+      "scenario": "steady_load",
+      "variable_count": 8,
+      "worker_count": 4
+    },
+    {
+      "assignment_bitstring": "100010",
+      "batch_index": 1,
+      "best_reps": 1,
+      "best_seed": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.59,
+      "event_count": 2,
+      "exact_match": true,
+      "exact_objective": 1183.583704,
+      "feasible": true,
+      "instance_id": "burst_load_sequencing_batch_01",
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 1183.583704,
+      "relative_gap": 0.0,
+      "same_assignment_as_exact": false,
+      "scenario": "burst_load",
+      "variable_count": 6,
+      "worker_count": 3
+    },
+    {
+      "assignment_bitstring": "001010",
+      "batch_index": 1,
+      "best_reps": 1,
+      "best_seed": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.529,
+      "event_count": 2,
+      "exact_match": true,
+      "exact_objective": 970.666667,
+      "feasible": true,
+      "instance_id": "critical_priority_sequencing_batch_01",
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 970.666667,
+      "relative_gap": 0.0,
+      "same_assignment_as_exact": false,
+      "scenario": "critical_priority",
+      "variable_count": 6,
+      "worker_count": 3
+    },
+    {
+      "assignment_bitstring": "010100",
+      "batch_index": 1,
+      "best_reps": 1,
+      "best_seed": 1,
+      "constraint_violations": 0,
+      "elapsed_seconds": 2.64,
+      "event_count": 2,
+      "exact_match": true,
+      "exact_objective": 607.91037,
+      "feasible": true,
+      "instance_id": "heterogeneous_workers_sequencing_batch_01",
+      "objective_gap": 0.0,
+      "profile": "sequencing",
+      "qaoa_objective": 607.91037,
+      "relative_gap": 0.0,
+      "same_assignment_as_exact": true,
+      "scenario": "heterogeneous_workers",
+      "variable_count": 6,
+      "worker_count": 3
+    }
+  ]
+}

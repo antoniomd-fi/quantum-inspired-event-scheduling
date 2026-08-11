@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="660" viewBox="0 0 1280 660">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="640.0" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#17212b">Diferencia en cumplimiento crítico frente al clásico por objetivo</text>
+<text x="24" y="296.0" transform="rotate(-90 24 296.0)" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#17212b">Diferencia media</text>
+<line x1="92" y1="510.00" x2="1240" y2="510.00" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="515.00" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">-0.05</text>
+<line x1="92" y1="403.00" x2="1240" y2="403.00" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="408.00" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.02</text>
+<line x1="92" y1="296.00" x2="1240" y2="296.00" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="301.00" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.10</text>
+<line x1="92" y1="189.00" x2="1240" y2="189.00" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="194.00" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.17</text>
+<line x1="92" y1="82.00" x2="1240" y2="82.00" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="87.00" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.24</text>
+<line x1="92" y1="436.36" x2="1240" y2="436.36" stroke="#17212b" stroke-width="1.2"/>
+<rect x="126.75" y="193.45" width="74.00" height="242.92" rx="3" fill="#21745f"/>
+<line x1="163.75" y1="155.64" x2="163.75" y2="231.25" stroke="#17212b" stroke-width="1.4"/>
+<line x1="155.75" y1="155.64" x2="171.75" y2="155.64" stroke="#17212b" stroke-width="1.4"/>
+<line x1="155.75" y1="231.25" x2="171.75" y2="231.25" stroke="#17212b" stroke-width="1.4"/>
+<text x="163.75" y="185.45" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.16</text>
+<text x="163.75" y="552" transform="rotate(-35 163.75 552)" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">Ráfagas críticas / alta</text>
+<rect x="270.25" y="383.01" width="74.00" height="53.35" rx="3" fill="#21745f"/>
+<line x1="307.25" y1="369.53" x2="307.25" y2="396.48" stroke="#17212b" stroke-width="1.4"/>
+<line x1="299.25" y1="369.53" x2="315.25" y2="369.53" stroke="#17212b" stroke-width="1.4"/>
+<line x1="299.25" y1="396.48" x2="315.25" y2="396.48" stroke="#17212b" stroke-width="1.4"/>
+<text x="307.25" y="375.01" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.04</text>
+<text x="307.25" y="552" transform="rotate(-35 307.25 552)" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">Ráfagas críticas / sobrecarga</text>
+<rect x="413.75" y="331.16" width="74.00" height="105.20" rx="3" fill="#21745f"/>
+<line x1="450.75" y1="268.70" x2="450.75" y2="393.63" stroke="#17212b" stroke-width="1.4"/>
+<line x1="442.75" y1="268.70" x2="458.75" y2="268.70" stroke="#17212b" stroke-width="1.4"/>
+<line x1="442.75" y1="393.63" x2="458.75" y2="393.63" stroke="#17212b" stroke-width="1.4"/>
+<text x="450.75" y="323.16" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.07</text>
+<text x="450.75" y="552" transform="rotate(-35 450.75 552)" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">Flooding crítico / alta</text>
+<rect x="557.25" y="329.24" width="74.00" height="107.13" rx="3" fill="#21745f"/>
+<line x1="594.25" y1="295.53" x2="594.25" y2="362.94" stroke="#17212b" stroke-width="1.4"/>
+<line x1="586.25" y1="295.53" x2="602.25" y2="295.53" stroke="#17212b" stroke-width="1.4"/>
+<line x1="586.25" y1="362.94" x2="602.25" y2="362.94" stroke="#17212b" stroke-width="1.4"/>
+<text x="594.25" y="321.24" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.07</text>
+<text x="594.25" y="552" transform="rotate(-35 594.25 552)" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">Flooding crítico / sobrecarga</text>
+<rect x="700.75" y="314.34" width="74.00" height="122.02" rx="3" fill="#21745f"/>
+<line x1="737.75" y1="267.89" x2="737.75" y2="360.78" stroke="#17212b" stroke-width="1.4"/>
+<line x1="729.75" y1="267.89" x2="745.75" y2="267.89" stroke="#17212b" stroke-width="1.4"/>
+<line x1="729.75" y1="360.78" x2="745.75" y2="360.78" stroke="#17212b" stroke-width="1.4"/>
+<text x="737.75" y="306.34" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.08</text>
+<text x="737.75" y="552" transform="rotate(-35 737.75 552)" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">Presión heterogénea / alta</text>
+<rect x="844.25" y="382.56" width="74.00" height="53.80" rx="3" fill="#21745f"/>
+<line x1="881.25" y1="336.31" x2="881.25" y2="428.81" stroke="#17212b" stroke-width="1.4"/>
+<line x1="873.25" y1="336.31" x2="889.25" y2="336.31" stroke="#17212b" stroke-width="1.4"/>
+<line x1="873.25" y1="428.81" x2="889.25" y2="428.81" stroke="#17212b" stroke-width="1.4"/>
+<text x="881.25" y="374.56" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.04</text>
+<text x="881.25" y="552" transform="rotate(-35 881.25 552)" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">Presión heterogénea / sobrecarga</text>
+<rect x="987.75" y="351.89" width="74.00" height="84.47" rx="3" fill="#21745f"/>
+<line x1="1024.75" y1="324.20" x2="1024.75" y2="379.57" stroke="#17212b" stroke-width="1.4"/>
+<line x1="1016.75" y1="324.20" x2="1032.75" y2="324.20" stroke="#17212b" stroke-width="1.4"/>
+<line x1="1016.75" y1="379.57" x2="1032.75" y2="379.57" stroke="#17212b" stroke-width="1.4"/>
+<text x="1024.75" y="343.89" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.06</text>
+<text x="1024.75" y="552" transform="rotate(-35 1024.75 552)" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">Fairness/starvation / alta</text>
+<rect x="1131.25" y="401.60" width="74.00" height="34.76" rx="3" fill="#21745f"/>
+<line x1="1168.25" y1="377.14" x2="1168.25" y2="426.06" stroke="#17212b" stroke-width="1.4"/>
+<line x1="1160.25" y1="377.14" x2="1176.25" y2="377.14" stroke="#17212b" stroke-width="1.4"/>
+<line x1="1160.25" y1="426.06" x2="1176.25" y2="426.06" stroke="#17212b" stroke-width="1.4"/>
+<text x="1168.25" y="393.60" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#17212b">0.02</text>
+<text x="1168.25" y="552" transform="rotate(-35 1168.25 552)" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#17212b">Fairness/starvation / sobrecarga</text>
+<line x1="92" y1="82" x2="92" y2="510" stroke="#17212b" stroke-width="1"/>
+</svg>

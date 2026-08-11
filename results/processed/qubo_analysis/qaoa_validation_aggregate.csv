@@ -1,0 +1,2 @@
+instance_count,feasible_count,feasible_rate,exact_match_count,exact_match_rate,same_assignment_count,same_assignment_rate,average_objective_gap,max_objective_gap,average_elapsed_seconds,max_variable_count_completed
+4,4,1.0,4,1.0,4,1.0,4.999999987376214e-07,9.999999974752427e-07,70.69,9

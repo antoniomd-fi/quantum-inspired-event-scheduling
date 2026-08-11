@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="620" viewBox="0 0 1120 620">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="560.0" y="44" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#17212b">QAOA exact match rate by instance</text>
+<text x="24" y="287.0" transform="rotate(-90 24 287.0)" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#17212b">Exact match rate</text>
+<line x1="92" y1="492.00" x2="1072" y2="492.00" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="497.00" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">0%</text>
+<line x1="92" y1="389.50" x2="1072" y2="389.50" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="394.50" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">25%</text>
+<line x1="92" y1="287.00" x2="1072" y2="287.00" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="292.00" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">50%</text>
+<line x1="92" y1="184.50" x2="1072" y2="184.50" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="189.50" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">75%</text>
+<line x1="92" y1="82.00" x2="1072" y2="82.00" stroke="#dfe5ea" stroke-width="1"/>
+<text x="80" y="87.00" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">100%</text>
+<rect x="144.00" y="82.00" width="92.00" height="410.00" rx="3" fill="#21745f"/>
+<text x="190.00" y="74.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#17212b">100%</text>
+<text x="190.00" y="526" transform="rotate(-28 190.00 526)" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">Baseline</text>
+<rect x="340.00" y="82.00" width="92.00" height="410.00" rx="3" fill="#21745f"/>
+<text x="386.00" y="74.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#17212b">100%</text>
+<text x="386.00" y="526" transform="rotate(-28 386.00 526)" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">Burst load</text>
+<rect x="536.00" y="82.00" width="92.00" height="410.00" rx="3" fill="#21745f"/>
+<text x="582.00" y="74.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#17212b">100%</text>
+<text x="582.00" y="526" transform="rotate(-28 582.00 526)" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">Critical priority</text>
+<rect x="732.00" y="82.00" width="92.00" height="410.00" rx="3" fill="#21745f"/>
+<text x="778.00" y="74.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#17212b">100%</text>
+<text x="778.00" y="526" transform="rotate(-28 778.00 526)" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">Heterogeneous workers</text>
+<rect x="928.00" y="123.00" width="92.00" height="369.00" rx="3" fill="#21745f"/>
+<text x="974.00" y="115.00" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#17212b">90%</text>
+<text x="974.00" y="526" transform="rotate(-28 974.00 526)" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#17212b">Steady load</text>
+<line x1="92" y1="492" x2="1072" y2="492" stroke="#17212b" stroke-width="1"/>
+<line x1="92" y1="82" x2="92" y2="492" stroke="#17212b" stroke-width="1"/>
+</svg>

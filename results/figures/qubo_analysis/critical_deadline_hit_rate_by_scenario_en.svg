@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img">
+<rect width="100%" height="100%" fill="#ffffff" />
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#17202a}</style>
+<text x="640.00" y="34.00" font-size="22" font-weight="700" text-anchor="middle">Critical deadline hit rate</text>
+<rect x="180" y="57" width="14" height="14" fill="#2f5f98" rx="2" />
+<text x="202.00" y="68.00" font-size="12" font-weight="400" text-anchor="start">QUBO v0</text>
+<rect x="495" y="57" width="14" height="14" fill="#9b3b3b" rx="2" />
+<text x="517.00" y="68.00" font-size="12" font-weight="400" text-anchor="start">Critical focused</text>
+<rect x="810" y="57" width="14" height="14" fill="#21745f" rx="2" />
+<text x="832.00" y="68.00" font-size="12" font-weight="400" text-anchor="start">QUBO v1 sequencing</text>
+<rect x="180" y="81" width="14" height="14" fill="#8f4f21" rx="2" />
+<text x="202.00" y="92.00" font-size="12" font-weight="400" text-anchor="start">Priority aware</text>
+<rect x="495" y="81" width="14" height="14" fill="#3d6b8f" rx="2" />
+<text x="517.00" y="92.00" font-size="12" font-weight="400" text-anchor="start">Shortest queue</text>
+<text x="22.00" y="337.50" font-size="14" font-weight="400" text-anchor="start" transform="rotate(-90.00 22.00 337.50)">Hit rate</text>
+<line x1="90" y1="130" x2="90" y2="545" stroke="#243241" stroke-width="1.2" />
+<line x1="90" y1="545" x2="1250" y2="545" stroke="#243241" stroke-width="1.2" />
+<line x1="90" y1="545.00" x2="1250" y2="545.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="462.00" x2="1250" y2="462.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="379.00" x2="1250" y2="379.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="296.00" x2="1250" y2="296.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="213.00" x2="1250" y2="213.00" stroke="#e5e7eb" stroke-width="1" />
+<line x1="90" y1="130.00" x2="1250" y2="130.00" stroke="#e5e7eb" stroke-width="1" />
+<rect x="106.00" y="130.00" width="34.60" height="415.00" fill="#2f5f98" rx="2" />
+<rect x="145.60" y="130.00" width="34.60" height="415.00" fill="#9b3b3b" rx="2" />
+<rect x="185.20" y="130.00" width="34.60" height="415.00" fill="#21745f" rx="2" />
+<rect x="224.80" y="130.00" width="34.60" height="415.00" fill="#8f4f21" rx="2" />
+<rect x="264.40" y="130.00" width="34.60" height="415.00" fill="#3d6b8f" rx="2" />
+<text x="206.00" y="624.00" font-size="12" font-weight="400" text-anchor="middle" transform="rotate(-24.00 206.00 624.00)">Baseline</text>
+<rect x="338.00" y="130.00" width="34.60" height="415.00" fill="#2f5f98" rx="2" />
+<rect x="377.60" y="130.00" width="34.60" height="415.00" fill="#9b3b3b" rx="2" />
+<rect x="417.20" y="130.00" width="34.60" height="415.00" fill="#21745f" rx="2" />
+<rect x="456.80" y="130.00" width="34.60" height="415.00" fill="#8f4f21" rx="2" />
+<rect x="496.40" y="130.00" width="34.60" height="415.00" fill="#3d6b8f" rx="2" />
+<text x="438.00" y="624.00" font-size="12" font-weight="400" text-anchor="middle" transform="rotate(-24.00 438.00 624.00)">Steady load</text>
+<rect x="570.00" y="467.19" width="34.60" height="77.81" fill="#2f5f98" rx="2" />
+<rect x="609.60" y="363.44" width="34.60" height="181.56" fill="#9b3b3b" rx="2" />
+<rect x="649.20" y="130.00" width="34.60" height="415.00" fill="#21745f" rx="2" />
+<rect x="688.80" y="130.00" width="34.60" height="415.00" fill="#8f4f21" rx="2" />
+<rect x="728.40" y="545.00" width="34.60" height="0.00" fill="#3d6b8f" rx="2" />
+<text x="670.00" y="624.00" font-size="12" font-weight="400" text-anchor="middle" transform="rotate(-24.00 670.00 624.00)">Burst load</text>
+<rect x="802.00" y="441.25" width="34.60" height="103.75" fill="#2f5f98" rx="2" />
+<rect x="841.60" y="399.75" width="34.60" height="145.25" fill="#9b3b3b" rx="2" />
+<rect x="881.20" y="130.00" width="34.60" height="415.00" fill="#21745f" rx="2" />
+<rect x="920.80" y="130.00" width="34.60" height="415.00" fill="#8f4f21" rx="2" />
+<rect x="960.40" y="545.00" width="34.60" height="0.00" fill="#3d6b8f" rx="2" />
+<text x="902.00" y="624.00" font-size="12" font-weight="400" text-anchor="middle" transform="rotate(-24.00 902.00 624.00)">Critical priority</text>
+<rect x="1034.00" y="130.00" width="34.60" height="415.00" fill="#2f5f98" rx="2" />
+<rect x="1073.60" y="130.00" width="34.60" height="415.00" fill="#9b3b3b" rx="2" />
+<rect x="1113.20" y="130.00" width="34.60" height="415.00" fill="#21745f" rx="2" />
+<rect x="1152.80" y="130.00" width="34.60" height="415.00" fill="#8f4f21" rx="2" />
+<rect x="1192.40" y="130.00" width="34.60" height="415.00" fill="#3d6b8f" rx="2" />
+<text x="1134.00" y="624.00" font-size="12" font-weight="400" text-anchor="middle" transform="rotate(-24.00 1134.00 624.00)">Heterogeneous workers</text>
+<text x="80.00" y="549.00" font-size="11" font-weight="400" text-anchor="end">0.00</text>
+<text x="80.00" y="466.00" font-size="11" font-weight="400" text-anchor="end">0.20</text>
+<text x="80.00" y="383.00" font-size="11" font-weight="400" text-anchor="end">0.40</text>
+<text x="80.00" y="300.00" font-size="11" font-weight="400" text-anchor="end">0.60</text>
+<text x="80.00" y="217.00" font-size="11" font-weight="400" text-anchor="end">0.80</text>
+<text x="80.00" y="134.00" font-size="11" font-weight="400" text-anchor="end">1.00</text>
+</svg>

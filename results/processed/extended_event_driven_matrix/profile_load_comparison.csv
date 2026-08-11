@@ -1,0 +1,13 @@
+profile,load_level,repetitions,best_overall_strategy,best_overall_objective_mean,best_classical_strategy,best_classical_objective_mean,qubo_v0_objective_mean,qubo_v1_objective_mean,qubo_v1_objective_stddev,qubo_v1_gap_vs_best_classical_mean,qubo_v1_gap_vs_best_classical_pct,qubo_v1_improvement_vs_v0_mean,qubo_v1_improvement_vs_v0_pct,qubo_v1_deadline_hit_rate_mean,qubo_v1_critical_deadline_hit_rate_mean,best_classical_critical_deadline_hit_rate_mean
+burst,medium,10,priority_aware,574.149,priority_aware,574.149,608.244,581.2476,19.8406,7.0986,1.236369,26.9964,4.438416,0.9938,0.9652,0.9275
+burst,high,10,priority_aware,634.5349,priority_aware,634.5349,713.0912,670.9437,48.7162,36.4088,5.737872,42.1475,5.910534,0.9813,0.9018,0.9141
+burst,overload,10,priority_aware,2757.3925,priority_aware,2757.3925,2848.7598,2783.8115,601.7511,26.419,0.958115,64.9483,2.27988,0.4639,0.1859,0.1832
+saturation,medium,10,shortest_queue,251.5351,shortest_queue,251.5351,294.35,288.3935,17.3508,36.8584,14.653382,5.9565,2.023611,1,1,1
+saturation,high,10,priority_aware,497.5473,priority_aware,497.5473,552.8391,548.1412,75.2301,50.5939,10.168661,4.6979,0.849777,0.976,0.8535,0.8203
+saturation,overload,10,priority_aware,1729.8959,priority_aware,1729.8959,1887.3371,1894.6788,321.0661,164.7829,9.525596,-7.3417,-0.388998,0.726,0.521,0.5146
+critical_heavy,medium,10,priority_aware,439.7719,priority_aware,439.7719,487.4305,457.4114,25.0796,17.6395,4.011057,30.0191,6.158642,0.9477,0.8508,0.8153
+critical_heavy,high,10,priority_aware,545.9976,priority_aware,545.9976,653.2941,617.6526,99.7563,71.655,13.123684,35.6415,5.455659,0.8788,0.6584,0.7117
+critical_heavy,overload,10,priority_aware,2907.3238,priority_aware,2907.3238,3042.0752,2971.6427,952.039,64.3189,2.212306,70.4325,2.315278,0.3962,0.1277,0.1002
+heterogeneous,medium,10,min_cost_greedy,186.575,min_cost_greedy,186.575,216.2247,210.9905,8.2643,24.4155,13.086158,5.2342,2.420723,1,1,1
+heterogeneous,high,10,shortest_queue,244.6829,shortest_queue,244.6829,292.0491,289.1705,37.9579,44.4876,18.181736,2.8786,0.985656,0.9986,0.9879,0.918
+heterogeneous,overload,10,priority_aware,1409.0476,priority_aware,1409.0476,1433.6428,1423.5722,281.4253,14.5246,1.03081,10.0706,0.702448,0.7214,0.4083,0.3567
