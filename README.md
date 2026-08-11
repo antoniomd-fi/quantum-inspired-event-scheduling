@@ -96,7 +96,7 @@ a scalability claim.
 ```text
 code/event_scheduler_sim/     Elixir simulator and scheduling strategies
 analysis/                     Python analysis and QAOA validation scripts
-scripts/                      Reproducible PowerShell commands
+scripts/                      Reproducible Bash and PowerShell commands
 notebooks/livebook/           English and Spanish Livebooks
 results/raw/                  Curated raw experiment outputs
 results/processed/            Processed CSV summaries
@@ -107,23 +107,41 @@ results/figures/              Generated SVG figures
 
 Build the Docker image:
 
+```bash
+docker build -t quantum-inspired-event-scheduling-sim ./code/event_scheduler_sim
+```
+
+PowerShell equivalent:
+
 ```powershell
 docker build -t quantum-inspired-event-scheduling-sim .\code\event_scheduler_sim
 ```
 
 Run tests:
 
-```powershell
+```bash
 docker run --rm -v "${PWD}:/workspace" -w /workspace/code/event_scheduler_sim quantum-inspired-event-scheduling-sim mix test
 ```
 
 Run the targeted stress matrix:
+
+```bash
+bash scripts/run_targeted_stress_matrix.sh
+```
+
+Windows PowerShell equivalent:
 
 ```powershell
 .\scripts\run_targeted_stress_matrix.ps1
 ```
 
 Process targeted results:
+
+```bash
+bash scripts/run_targeted_stress_analysis.sh
+```
+
+Windows PowerShell equivalent:
 
 ```powershell
 .\scripts\run_targeted_stress_analysis.ps1
@@ -133,7 +151,7 @@ Process targeted results:
 
 Start Livebook with Docker:
 
-```powershell
+```bash
 docker run --rm -p 8080:8080 -v "${PWD}:/workspace" ghcr.io/livebook-dev/livebook:latest
 ```
 
@@ -148,15 +166,25 @@ Available notebooks:
 - `/workspace/notebooks/livebook/results_exploration_en.livemd`
 - `/workspace/notebooks/livebook/results_exploration_es.livemd`
 
-The Livebooks render summary tables and SVG figures from the checked-in result
-files, so they can be used as a lightweight result browser.
+The Livebooks render summary tables from the checked-in result files, so they
+can be used as a lightweight result browser without extra visualization dependencies.
 
 ## Reproduce Processed Outputs
 
+```bash
+bash scripts/run_extended_event_driven_matrix.sh
+bash scripts/run_qaoa_validation_analysis.sh
+bash scripts/run_targeted_stress_matrix.sh
+bash scripts/run_targeted_stress_analysis.sh
+```
+
+Windows PowerShell equivalents:
+
 ```powershell
-python analysis\extended_experiment_analysis.py
-python analysis\qaoa_validation_analysis.py
-python analysis\targeted_stress_analysis.py
+.\scripts\run_extended_event_driven_matrix.ps1
+.\scripts\run_qaoa_validation_analysis.ps1
+.\scripts\run_targeted_stress_matrix.ps1
+.\scripts\run_targeted_stress_analysis.ps1
 ```
 
 The QAOA validation dependencies are isolated in:
