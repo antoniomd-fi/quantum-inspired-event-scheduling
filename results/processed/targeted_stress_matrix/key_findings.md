@@ -44,24 +44,26 @@ It is not a peer-reviewed analysis by itself.
 
 ## Sign Tests
 
-| profile | load | test | wins | losses | p-value |
-| --- | --- | --- | ---: | ---: | ---: |
-| burst_critical | high | objective_vs_best_classical | 27 | 3 | 0.000008 |
-| burst_critical | high | objective_vs_qubo_v0 | 30 | 0 | 0.000000 |
-| burst_critical | overload | objective_vs_best_classical | 5 | 25 | 0.000325 |
-| burst_critical | overload | objective_vs_qubo_v0 | 20 | 10 | 0.098737 |
-| flooding_critical | high | objective_vs_best_classical | 3 | 27 | 0.000008 |
-| flooding_critical | high | objective_vs_qubo_v0 | 30 | 0 | 0.000000 |
-| flooding_critical | overload | objective_vs_best_classical | 0 | 30 | 0.000000 |
-| flooding_critical | overload | objective_vs_qubo_v0 | 28 | 2 | 0.000001 |
-| heterogeneous_pressure | high | objective_vs_best_classical | 5 | 25 | 0.000325 |
-| heterogeneous_pressure | high | objective_vs_qubo_v0 | 16 | 14 | 0.855536 |
-| heterogeneous_pressure | overload | objective_vs_best_classical | 4 | 26 | 0.000059 |
-| heterogeneous_pressure | overload | objective_vs_qubo_v0 | 16 | 14 | 0.855536 |
-| fairness_starvation | high | objective_vs_best_classical | 0 | 30 | 0.000000 |
-| fairness_starvation | high | objective_vs_qubo_v0 | 16 | 14 | 0.855536 |
-| fairness_starvation | overload | objective_vs_best_classical | 0 | 30 | 0.000000 |
-| fairness_starvation | overload | objective_vs_qubo_v0 | 11 | 19 | 0.200488 |
+The 16 tests are treated as one family and adjusted with Holm's procedure.
+
+| profile | load | test | wins | losses | raw p-value | Holm-adjusted p-value | reject at 0.05 |
+| --- | --- | --- | ---: | ---: | ---: | ---: | --- |
+| burst_critical | high | objective_vs_best_classical | 27 | 3 | 0.000008 | 0.000084 | yes |
+| burst_critical | high | objective_vs_qubo_v0 | 30 | 0 | <0.000001 | <0.000001 | yes |
+| burst_critical | overload | objective_vs_best_classical | 5 | 25 | 0.000325 | 0.002274 | yes |
+| burst_critical | overload | objective_vs_qubo_v0 | 20 | 10 | 0.098737 | 0.493686 | no |
+| flooding_critical | high | objective_vs_best_classical | 3 | 27 | 0.000008 | 0.000084 | yes |
+| flooding_critical | high | objective_vs_qubo_v0 | 30 | 0 | <0.000001 | <0.000001 | yes |
+| flooding_critical | overload | objective_vs_best_classical | 0 | 30 | <0.000001 | <0.000001 | yes |
+| flooding_critical | overload | objective_vs_qubo_v0 | 28 | 2 | <0.000001 | 0.000010 | yes |
+| heterogeneous_pressure | high | objective_vs_best_classical | 5 | 25 | 0.000325 | 0.002274 | yes |
+| heterogeneous_pressure | high | objective_vs_qubo_v0 | 16 | 14 | 0.855536 | 1.000000 | no |
+| heterogeneous_pressure | overload | objective_vs_best_classical | 4 | 26 | 0.000059 | 0.000476 | yes |
+| heterogeneous_pressure | overload | objective_vs_qubo_v0 | 16 | 14 | 0.855536 | 1.000000 | no |
+| fairness_starvation | high | objective_vs_best_classical | 0 | 30 | <0.000001 | <0.000001 | yes |
+| fairness_starvation | high | objective_vs_qubo_v0 | 16 | 14 | 0.855536 | 1.000000 | no |
+| fairness_starvation | overload | objective_vs_best_classical | 0 | 30 | <0.000001 | <0.000001 | yes |
+| fairness_starvation | overload | objective_vs_qubo_v0 | 11 | 19 | 0.200488 | 0.801954 | no |
 
 ## Interpretation Boundary
 

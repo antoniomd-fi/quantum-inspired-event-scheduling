@@ -403,7 +403,7 @@ def sign_test_rows(per_seed: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "wins": objective_wins,
                 "losses": objective_losses,
                 "ties": len(group) - objective_wins - objective_losses,
-                "two_sided_sign_test_p": round_number(sign_test_p(objective_wins, objective_losses)),
+                "two_sided_sign_test_p": sign_test_p(objective_wins, objective_losses),
             }
         )
         rows.append(
@@ -414,11 +414,44 @@ def sign_test_rows(per_seed: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "wins": v0_wins,
                 "losses": v0_losses,
                 "ties": len(group) - v0_wins - v0_losses,
-                "two_sided_sign_test_p": round_number(sign_test_p(v0_wins, v0_losses)),
+                "two_sided_sign_test_p": sign_test_p(v0_wins, v0_losses),
             }
         )
 
-    return sorted(rows, key=lambda row: (profile_index(row["profile"]), load_index(row["load_level"]), row["test"]))
+    adjusted_rows = add_holm_adjustment(rows)
+    return sorted(
+        adjusted_rows,
+        key=lambda row: (
+            profile_index(row["profile"]),
+            load_index(row["load_level"]),
+            row["test"],
+        ),
+    )
+
+
+def add_holm_adjustment(rows: list[dict[str, Any]], alpha: float = 0.05) -> list[dict[str, Any]]:
+    """Add Holm-adjusted p-values across one family of hypothesis tests."""
+    ordered = sorted(
+        enumerate(rows),
+        key=lambda item: item[1]["two_sided_sign_test_p"],
+    )
+    adjusted_by_index = [1.0] * len(rows)
+    running_max = 0.0
+
+    for rank, (original_index, row) in enumerate(ordered):
+        remaining_hypotheses = len(rows) - rank
+        scaled_p = min(1.0, row["two_sided_sign_test_p"] * remaining_hypotheses)
+        running_max = max(running_max, scaled_p)
+        adjusted_by_index[original_index] = running_max
+
+    return [
+        {
+            **row,
+            "holm_adjusted_p": adjusted_by_index[index],
+            "holm_reject_0_05": adjusted_by_index[index] <= alpha,
+        }
+        for index, row in enumerate(rows)
+    ]
 
 
 def write_figures(profile_load: list[dict[str, Any]]) -> None:
@@ -675,15 +708,20 @@ def write_findings(
             "",
             "## Sign Tests",
             "",
-            "| profile | load | test | wins | losses | p-value |",
-            "| --- | --- | --- | ---: | ---: | ---: |",
+            "The 16 tests are treated as one family and adjusted with Holm's procedure.",
+            "",
+            "| profile | load | test | wins | losses | raw p-value | Holm-adjusted p-value | reject at 0.05 |",
+            "| --- | --- | --- | ---: | ---: | ---: | ---: | --- |",
         ]
     )
 
     for row in sign_tests:
         lines.append(
             f"| {row['profile']} | {row['load_level']} | {row['test']} | "
-            f"{row['wins']} | {row['losses']} | {row['two_sided_sign_test_p']:.6f} |"
+            f"{row['wins']} | {row['losses']} | "
+            f"{format_p_value(row['two_sided_sign_test_p'])} | "
+            f"{format_p_value(row['holm_adjusted_p'])} | "
+            f"{'yes' if row['holm_reject_0_05'] else 'no'} |"
         )
 
     lines.extend(
@@ -847,6 +885,13 @@ def parse_number(value: str) -> float:
 
 def round_number(value: float) -> float:
     return round(value, 6)
+
+
+def format_p_value(value: float) -> str:
+    if value < 0.000001:
+        return "<0.000001"
+
+    return f"{value:.6f}"
 
 
 def percent(value: float) -> str:
